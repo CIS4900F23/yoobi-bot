@@ -9,8 +9,10 @@ const app = express();
 app.use(cors());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+const OPEN_AI = process.env.OPEN_AI || 'default';
+
 const openai = new OpenAI({
-    apiKey: process.env.OPEN_AI,
+    apiKey: OPEN_AI,
 });
 
 async function getCompletion(question: string) {
