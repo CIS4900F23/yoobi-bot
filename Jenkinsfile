@@ -8,4 +8,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo 'Success!'
+        }
+    }
 }
