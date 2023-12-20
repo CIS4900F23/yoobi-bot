@@ -5,6 +5,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'node --version'
+                sh './get-nodes.sh'
             }
         }
     }
